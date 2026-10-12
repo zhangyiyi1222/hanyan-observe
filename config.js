@@ -8,7 +8,7 @@
  */
 window.HANYAN_CONFIG = {
   // 后端入口（当前内测通道；换成服务器域名后改成 https://hanyan.zhangzhongwei.top）
-  backend: "https://d954e8cf195086.lhr.life",
+  backend: "https://a4c4bb15f49659.lhr.life",
 
   // 新客户先注册；已有账号/兑换码的走登录
   enterPath: "/register",
