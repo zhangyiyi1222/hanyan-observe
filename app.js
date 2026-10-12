@@ -57,21 +57,42 @@
   /* 「进入体验 / 立即体验 / 服务卡片」→ 跳到真实后端页面。
    * 静态页只负责展示与跳转：注册、上传图片、出报告都由后端完成
    * （后端用安全 Cookie + CSRF 保护，静态页无法代替，也不该代替）。
-   * 后端地址写在 config.js 里，换服务器/换域名时只改那一行。 */
+   *
+   * 后端地址写在 config.js 里，但 GitHub Pages 对 config.js 有 10 分钟缓存，
+   * 而临时隧道地址随时会变。所以页面打开后会定期（含进入页面时）带时间戳
+   * 重新拉一次最新配置；点击时优先用这份最新的，拉不到再退回内联的那份。 */
+  const cfg0 = window.HANYAN_CONFIG || {};
+  let liveBackend = String(cfg0.backend || "").replace(/\/+$/, "");
+  let liveEnterPath = cfg0.enterPath || "/register";
+
+  const refreshBackend = () => {
+    fetch("./config.js?t=" + Date.now(), { cache: "no-store" })
+      .then((resp) => (resp && resp.ok ? resp.text() : ""))
+      .then((text) => {
+        if (!text) return;
+        const backend = text.match(/backend:\s*["']([^"']+)["']/);
+        if (backend && backend[1]) liveBackend = backend[1].replace(/\/+$/, "");
+        const enter = text.match(/enterPath:\s*["']([^"']+)["']/);
+        if (enter && enter[1]) liveEnterPath = enter[1];
+      })
+      .catch(() => { /* 拉不到就用现有的 */ });
+  };
+  refreshBackend();
+  setInterval(refreshBackend, 60000);
+
   const goToBackend = (path) => {
     const cfg = window.HANYAN_CONFIG || {};
-    const backend = String(cfg.backend || "").replace(/\/+$/, "");
-    if (!backend) {
+    if (!liveBackend) {
       setStatus(cfg.fallbackTip || "体验入口正在维护，请找客服要最新链接。", "error");
       return;
     }
-    window.open(backend + (path || cfg.enterPath || "/"), "_blank", "noopener");
+    window.open(liveBackend + (path || liveEnterPath || "/register"), "_blank", "noopener");
   };
 
   document.querySelectorAll('[data-open-experience]').forEach((el) => {
     el.addEventListener('click', (event) => {
       event.preventDefault();
-      goToBackend((window.HANYAN_CONFIG || {}).enterPath || "/register");
+      goToBackend();
     });
   });
 
@@ -80,7 +101,7 @@
       event.preventDefault();
       event.stopPropagation();
       // 服务卡片也先进注册/登录页：具体买哪一档在兑换与提交时选
-      goToBackend((window.HANYAN_CONFIG || {}).enterPath || "/register");
+      goToBackend();
     });
   });
 
