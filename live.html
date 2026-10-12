@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#f5eddf" />
+  <title>汉筵观象 · 可编辑 DOM 版</title>
+  <meta name="description" content="汉筵观象可编辑响应式前端版本。" />
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="./assets/hero-generated.webp" as="image" />
+  <link rel="stylesheet" href="./live.css" />
+</head>
+<body>
+<header class="live-header" id="top">
+  <a href="#top" class="live-brand"><span class="live-seal">筵</span><span><b>汉筵观象</b><small>HANYAN OBSERVE</small></span></a>
+  <nav><a href="#top" class="active">首页</a><a href="#experience">产品体验</a><a href="#about">关于我们</a><a href="#culture">道家文化</a><a href="#help">帮助中心</a></nav>
+  <button class="gold-btn" data-open-experience>进入体验 →</button>
+</header>
+
+<main>
+  <section class="live-hero" id="culture">
+    <div class="live-hero-bg"></div>
+    <div class="live-hero-copy reveal">
+      <div class="kicker">东方智慧 · 观象文化 <i></i></div>
+      <h1>汉筵观象<span>观</span></h1>
+      <h2>见象 · 明理 · 察势</h2>
+      <p>上传一张图片，从其中的象意出发，<br>结合传统文化的视角，获得更深入的理解与参考。</p>
+      <div class="hero-actions"><button class="gold-btn" data-open-experience>立即体验 →</button><a class="line-btn" href="#about">了解更多</a></div>
+    </div>
+    <div class="vertical-mark"><b>汉</b><b>筵</b><span>与您一同看见<br>更多可能。</span></div>
+  </section>
+
+  <section class="paper-scroll reveal" id="about">
+    <div class="scroll-copy"><h2>一张图片，开启新的视角</h2><p>从画面中的事物、场景与细节出发，<br>结合传统文化的象意体系，<br>为你提供更深层次的解读与参考。</p></div>
+    <div class="flow" id="experience">
+      <div class="flow-step"><span><img src="./assets/icon-upload.svg" alt=""></span><b>1. 上传图片</b><small>选择你想咨询的画面<br>（支持常见图片格式）</small></div>
+      <i>→</i>
+      <div class="flow-step"><span><img src="./assets/icon-lotus.svg" alt=""></span><b>2. 象意解析</b><small>从传统文化角度<br>多维度分析其中象意</small></div>
+      <i>→</i>
+      <div class="flow-step"><span><img src="./assets/icon-report.svg" alt=""></span><b>3. 生成报告</b><small>输出专业、清晰的<br>解析与参考建议</small></div>
+    </div>
+  </section>
+
+  <section class="live-services reveal">
+    <h2>我们的服务</h2><p>从不同维度，为你提供更深入的象意解读</p>
+    <div class="live-card-grid">
+      <article><img src="./assets/card-look.webp" alt="白梅花枝"><div><h3>照见 <em>¥9.9</em></h3><p>基于图片的整体象意<br>给出简要解读与参考。</p><button data-service="照见">→</button></div></article>
+      <article><img src="./assets/card-simple.webp" alt="书法纸笔"><div><h3>简答 <em>¥19.9</em></h3><p>围绕你的问题<br>提供更具体的分析。</p><button data-service="简答">→</button></div></article>
+      <article><img src="./assets/card-detail.webp" alt="古籍花影"><div><h3>详答 <em>¥29.9</em></h3><p>从多个角度深入解析<br>给出更系统的参考。</p><button data-service="详答">→</button></div></article>
+      <article><img src="./assets/card-judge.webp" alt="亭台山水"><div><h3>兼断 <em>¥39.9</em></h3><p>结合画面信息与相关背景<br>提供更全面的解读与建议。</p><button data-service="兼断">→</button></div></article>
+    </div>
+  </section>
+
+  <section class="live-scenes reveal">
+    <div class="scene-art"></div>
+    <div class="scene-info"><h2><span>✦</span> 适合哪些场景</h2><p>生活中的许多问题，都可以从“象”的角度重新看一看</p><div class="tag-grid"><span>日常选择</span><span>人际关系</span><span>事业方向</span><span>财运机会</span><span>情感困惑</span><span>生活状态</span><span>重要决策</span><span>其他问题</span></div></div>
+  </section>
+</main>
+<footer id="help"><b>汉筵观象</b><span>HANYAN OBSERVE · 东方智慧 · 观象文化</span><a href="./index.html">切换到像素级展示版</a></footer>
+
+<dialog class="experience-modal" id="experienceModal" aria-labelledby="experienceTitle">
+  <form method="dialog" class="modal-card">
+    <button class="modal-close" value="close" aria-label="关闭">×</button>
+    <div class="modal-mark">筵</div><p class="eyebrow">HANYAN OBSERVE</p><h2 id="experienceTitle">开始一次观象体验</h2>
+    <p class="modal-desc">选择服务并上传图片。当前为前端展示版，可在这里继续接入订单、支付与 AI 分析接口。</p>
+    <div class="service-choice" id="serviceChoice">当前服务：照见</div>
+    <label class="upload-box"><input type="file" accept="image/*" id="imageInput"><span class="upload-symbol">＋</span><b>选择一张图片</b><small>JPG / PNG / WEBP</small></label>
+    <div class="preview-wrap" id="previewWrap" hidden><img id="previewImage" alt="上传图片预览"></div>
+    <button class="modal-primary" type="button" id="mockAnalyze">开始解析 →</button><p class="mock-status" id="mockStatus"></p>
+  </form>
+</dialog>
+<script src="./config.js"></script>
+<script src="./app.js"></script>
+<script>
+const observer = new IntersectionObserver(entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('shown')), {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

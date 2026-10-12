@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#f5eddf" />
+  <meta name="color-scheme" content="light" />
+  <title>汉筵观象 · 东方智慧</title>
+  <meta name="description" content="汉筵观象东方文化视觉体验页。" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">跳到主要内容</a>
+  <main class="site-shell" id="mainContent" aria-label="汉筵观象首页">
+    <!-- Desktop/tablet: exact visual artboard based on the supplied reference. -->
+    <section class="pixel-artboard" data-reference-size="1312x1199" aria-label="汉筵观象像素级还原页面">
+      <img class="pixel-art" src="./assets/reference-page.png" alt="汉筵观象网站完整视觉页面" draggable="false" />
+
+      <nav class="hotspots" aria-label="页面导航">
+        <a class="hotspot home" href="#top" aria-label="首页"></a>
+        <button class="hotspot product" data-open-experience aria-label="产品体验"></button>
+        <a class="hotspot about" href="#about" aria-label="关于我们"></a>
+        <a class="hotspot culture" href="#culture" aria-label="道家文化"></a>
+        <a class="hotspot help" href="#help" aria-label="帮助中心"></a>
+        <button class="hotspot enter" data-open-experience aria-label="进入体验"></button>
+        <button class="hotspot hero-primary" data-open-experience aria-label="立即体验"></button>
+        <a class="hotspot hero-secondary" href="#about" aria-label="了解更多"></a>
+        <button class="hotspot card card-a" data-service="照见" aria-label="选择照见服务"></button>
+        <button class="hotspot card card-b" data-service="简答" aria-label="选择简答服务"></button>
+        <button class="hotspot card card-c" data-service="详答" aria-label="选择详答服务"></button>
+        <button class="hotspot card card-d" data-service="兼断" aria-label="选择兼断服务"></button>
+      </nav>
+    </section>
+
+    <!-- Mobile fallback: same visual language rebuilt as real responsive DOM. -->
+    <section class="mobile-site" id="top">
+      <header class="mobile-header">
+        <a class="brand" href="#top" aria-label="汉筵观象首页">
+          <span class="seal">筵</span>
+          <span class="brand-text"><b>汉筵观象</b><small>HANYAN OBSERVE</small></span>
+        </a>
+        <button class="pill-btn" data-open-experience>进入体验 →</button>
+      </header>
+
+      <section class="mobile-hero" id="culture">
+        <div class="hero-copy">
+          <p class="eyebrow">东方智慧 · 观象文化</p>
+          <h1>汉筵观象</h1>
+          <h2>见象 · 明理 · 察势</h2>
+          <p>上传一张图片，从其中的象意出发，结合传统文化的视角，获得更深入的理解与参考。</p>
+          <div class="actions">
+            <button class="pill-btn" data-open-experience>立即体验 →</button>
+            <a class="outline-btn" href="#about">了解更多</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="scroll-panel" id="about">
+        <div class="intro-copy">
+          <h2>一张图片，开启新的视角</h2>
+          <p>从画面中的事物、场景与细节出发，结合传统文化的象意体系，为你提供更深层次的解读与参考。</p>
+        </div>
+        <div class="steps" id="experience">
+          <div class="step"><span class="step-icon image-icon"></span><b>1. 上传图片</b><small>选择你想分析的画面</small></div>
+          <span class="step-arrow">→</span>
+          <div class="step"><span class="step-icon lotus-icon">✦</span><b>2. 象意解析</b><small>从多个维度分析其中象意</small></div>
+          <span class="step-arrow">→</span>
+          <div class="step"><span class="step-icon report-icon"></span><b>3. 生成报告</b><small>输出专业、清晰的解读</small></div>
+        </div>
+      </section>
+
+      <section class="services-section">
+        <h2>我们的服务</h2>
+        <p class="section-subtitle">从不同维度，为你提供更深入的象意解读</p>
+        <div class="service-grid">
+          <article class="service-card" data-service="照见"><img src="./assets/card-look.webp" alt="白梅意境" /><div><h3>照见 <em>¥9.9</em></h3><p>基于图片的整体象意，给出简要解读与参考。</p><button data-service="照见">→</button></div></article>
+          <article class="service-card" data-service="简答"><img src="./assets/card-simple.webp" alt="书法案几" /><div><h3>简答 <em>¥19.9</em></h3><p>围绕你的问题，提供更具体的分析。</p><button data-service="简答">→</button></div></article>
+          <article class="service-card" data-service="详答"><img src="./assets/card-detail.webp" alt="古籍花影" /><div><h3>详答 <em>¥29.9</em></h3><p>从多个角度深入解析，给出更系统的参考。</p><button data-service="详答">→</button></div></article>
+          <article class="service-card" data-service="兼断"><img src="./assets/card-judge.webp" alt="水墨亭阁" /><div><h3>兼断 <em>¥39.9</em></h3><p>结合画面信息与相关背景，提供更全面的解读。</p><button data-service="兼断">→</button></div></article>
+        </div>
+      </section>
+
+      <section class="scene-section">
+        <div class="scene-copy">
+          <h2>适合哪些场景</h2>
+          <p>生活中的许多问题，都可以从“象”的角度重新看一看</p>
+          <div class="scene-tags">
+            <span>日常选择</span><span>人际关系</span><span>事业方向</span><span>财运机会</span>
+            <span>情感困惑</span><span>生活状态</span><span>重要决策</span><span>其他问题</span>
+          </div>
+        </div>
+      </section>
+
+<footer id="help">汉筵观象 · HANYAN OBSERVE<p id="betaNote">内测体验中：点「进入体验」到站内注册后使用兑换码开通服务。若按钮打不开，请找客服要一份最新直连地址。</p></footer>
+    </section>
+  </main>
+
+  <dialog class="experience-modal" id="experienceModal">
+    <form method="dialog" class="modal-card">
+      <button class="modal-close" value="close" aria-label="关闭">×</button>
+      <div class="modal-mark">筵</div>
+      <p class="eyebrow">HANYAN OBSERVE</p>
+      <h2>开始一次观象体验</h2>
+      <p class="modal-desc">这是前端展示版。选择服务后，可在这里继续接入你的上传、订单与 AI 分析接口。</p>
+      <div class="service-choice" id="serviceChoice">当前服务：照见</div>
+      <label class="upload-box">
+        <input type="file" accept="image/*" id="imageInput" />
+        <span class="upload-symbol">＋</span>
+        <b>选择一张图片</b>
+        <small>JPG / PNG / WEBP</small>
+      </label>
+      <div class="preview-wrap" id="previewWrap" hidden><img id="previewImage" alt="上传图片预览" /></div>
+      <button class="modal-primary" type="button" id="mockAnalyze">开始解析 →</button>
+      <p class="mock-status" id="mockStatus"></p>
+    </form>
+  </dialog>
+
+<script src="./config.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
