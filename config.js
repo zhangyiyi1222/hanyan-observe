@@ -8,7 +8,7 @@
  */
 window.HANYAN_CONFIG = {
   // 后端入口（当前内测通道；换成服务器域名后改成 https://hanyan.zhangzhongwei.top）
-  backend: "https://073ef37281d5c8.lhr.life",
+  backend: "https://intl-lens-shadows-stores.trycloudflare.com",
 
   // 新客户先注册；已有账号/兑换码的走登录
   enterPath: "/register",
