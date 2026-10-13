@@ -5,3 +5,28 @@
 
 /* 手机端首屏：改用竖版裁切图，人物完整居中央 */
 @media(max-width:560px){.live-hero-bg{background-image:linear-gradient(90deg,rgba(247,240,228,.74) 0%,rgba(247,240,228,.42) 39%,rgba(247,240,228,.06) 68%),url('./assets/hero-mobile.webp');background-position:center top;background-size:cover}}
+
+/* ---- 2026-10-13 师傅反馈修正：品牌字形 + 手机首屏 ----
+   1) "汉筵观象"里的"筵"在手机上小字号常被系统字体压成一团，看着像错别字：
+      内嵌 12KB 子集字体（Noto Serif SC，SIL OFL）保证各机型同一字形，
+      并用 font-synthesis:none 关掉浏览器合成粗体（走形的主因），字号也放大一档。
+   2) 手机首屏改用 hero-mobile-v2.webp（去掉上下合成留白、人物上移、三倍像素），
+      文字压在画上的那一段用自上而下的淡纸色渐层化开。 */
+@font-face{font-family:"HanyanSerif";src:url("./assets/hanyan-serif.woff2") format("woff2");
+  font-weight:400 700;font-style:normal;font-display:swap}
+.live-seal{font:400 26px/1 "HanyanSerif","Songti SC","STSong","SimSun",serif;font-synthesis:none;letter-spacing:0}
+.live-brand b{font:600 22px/1.15 "HanyanSerif","Songti SC","STSong","SimSun",serif;font-synthesis:none;letter-spacing:4px}
+.live-hero h1{font-family:"HanyanSerif","Songti SC","STSong","SimSun",serif;font-synthesis:none}
+.live-hero h2,.modal-mark{font-family:"HanyanSerif","Songti SC","STSong","SimSun",serif;font-synthesis:none}
+footer b{font-family:"HanyanSerif","Songti SC","STSong","SimSun",serif;font-synthesis:none}
+@media(max-width:560px){
+  .live-brand b{font-size:20px;letter-spacing:2px}
+  .live-seal{font-size:24px}
+  .live-hero-bg{
+    background-image:
+      linear-gradient(180deg,rgba(247,240,228,0) 26%,rgba(247,240,228,.32) 50%,
+        rgba(247,240,228,.74) 74%,rgb(247,240,228) 100%),
+      url('./assets/hero-mobile-v2.webp');
+    background-position:center top;background-size:cover;
+  }
+}
