@@ -55,3 +55,10 @@ button{cursor:pointer}
 
 /* 内测提示（2026-10-12 加入） */
 #betaNote{color:var(--muted, #8a8378);font-size:13px;line-height:1.7;margin:8px 0 0}
+
+/* ---- 手机端首屏修正（2026-10-13）：原 hero 是 2172x724 的 3:1 宽图，
+   竖屏 cover 只能看到约 20% 宽度，人物（占 30%）必被裁掉一半。
+   这里在窄屏改用竖版裁切图 hero-mobile.webp（人物居中、完整）。 ---- */
+@media (max-width:640px){
+  .mobile-hero{background-image:linear-gradient(180deg,rgba(247,238,223,.05) 0%,rgba(247,238,223,.12) 50%,#f7efe3 100%),url('./assets/hero-mobile.webp');background-position:center top;background-size:cover;background-repeat:no-repeat}
+}
